@@ -76,18 +76,6 @@
         <visibleLines>25</visibleLines>
     </fields>
     <fields>
-        <fullName>Developer__c</fullName>
-        <deleteConstraint>Restrict</deleteConstraint>
-        <externalId>false</externalId>
-        <label>Developer</label>
-        <referenceTo>Developer__c</referenceTo>
-        <relationshipLabel>Milestones</relationshipLabel>
-        <relationshipName>Milestones</relationshipName>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
         <fullName>Developing_cost__c</fullName>
         <externalId>false</externalId>
         <label>Developing cost</label>

@@ -18,7 +18,7 @@
         <name>Description__c</name>
     </fields>
     <fields>
-        <label><!-- Developing_cost --></label>
+        <label><!-- Developing cost --></label>
         <name>Developing_cost__c</name>
     </fields>
     <fields>

@@ -17,11 +17,6 @@
         <name>Description__c</name>
     </fields>
     <fields>
-        <label><!-- Developer --></label>
-        <name>Developer__c</name>
-        <relationshipLabel><!-- Milestones --></relationshipLabel>
-    </fields>
-    <fields>
         <label><!-- Developing cost --></label>
         <name>Developing_cost__c</name>
     </fields>

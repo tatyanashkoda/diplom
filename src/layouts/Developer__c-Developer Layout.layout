@@ -79,10 +79,6 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Milestone__c.Developer__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
         <relatedList>Milestone_Developer__c.Developer__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

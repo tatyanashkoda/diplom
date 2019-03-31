@@ -81,7 +81,7 @@
     <fields>
         <fullName>Developing_cost__c</fullName>
         <externalId>false</externalId>
-        <label>Developing_cost</label>
+        <label>Developing cost</label>
         <summarizedField>Milestone__c.Developing_cost__c</summarizedField>
         <summaryForeignKey>Milestone__c.Project__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
