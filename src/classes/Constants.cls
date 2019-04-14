@@ -10,5 +10,7 @@ public with sharing class Constants {
     public static final String GUEST_USER_NAME = 'Calendar Site Guest User';
     public static final String CONTACT_MANAGER_ID = '0036F000034bameQAA';
     public static final String ACCOUNT_MANAGER_ID = '0016F00003DhHmtQAF';
+    public static final String MILESTONE_STATUS_CLOSED = 'Closed';
+    public static final String MILESTONE_STATUS_INPROGRESS = 'In progress';
 
 }

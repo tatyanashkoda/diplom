@@ -29,9 +29,6 @@ public without sharing class CreateEventController {
     }
 
     public PageReference save() {
-        System.debug('1234');
-        Contact contactManager = [SELECT Id FROM Contact Where Name = :Constants.CONTACT_MANAGER_NAME];
-        System.debug('contactManager-->' + contactManager);
         createOrGetContact();
         Boolean checkOnFreeTime = false;
 
@@ -55,7 +52,7 @@ public without sharing class CreateEventController {
                         Subject__c = event.Subject__c,
                         Status__c = Constants.WAITING_FOR_APPROVAL_STATUS,
                         Contact__c = createOrGetContact().Id,
-                        Attached_to__c = contactManager.Id
+                        Attached_to__c = Constants.CONTACT_MANAGER_ID
                 );
                 insert objEvent;
 
