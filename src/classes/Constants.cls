@@ -12,5 +12,7 @@ public with sharing class Constants {
     public static final String ACCOUNT_MANAGER_ID = '0016F00003DhHmtQAF';
     public static final String MILESTONE_STATUS_CLOSED = 'Closed';
     public static final String MILESTONE_STATUS_INPROGRESS = 'In progress';
+    public static final String TRANSACTION_RECORD_TYPE_CUSTOMER_PAYMENT = 'Customer Payment';
+    public static final String TRANSACTION_RECORD_TYPE_SALARY = 'Salary';
 
 }
