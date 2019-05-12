@@ -15,7 +15,7 @@
             <name>Update_Name_for_Milestone_Developer</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Developer__c.Name</field>
             <operation>notEqual</operation>

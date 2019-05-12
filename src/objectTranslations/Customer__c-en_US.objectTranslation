@@ -9,6 +9,11 @@
         <value>Customers</value>
     </caseValues>
     <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Customers --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Count current project --></label>
         <name>Count_current_project__c</name>
     </fields>

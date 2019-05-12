@@ -100,7 +100,7 @@
         <fullName>Project_budget__c</fullName>
         <externalId>false</externalId>
         <label>Project budget</label>
-        <summarizedField>Milestone__c.Budget__c</summarizedField>
+        <summarizedField>Milestone__c.Cost__c</summarizedField>
         <summaryForeignKey>Milestone__c.Project__c</summaryForeignKey>
         <summaryOperation>sum</summaryOperation>
         <trackTrending>false</trackTrending>

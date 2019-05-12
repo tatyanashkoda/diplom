@@ -11,6 +11,9 @@
     <tabs>Project__c</tabs>
     <tabs>Milestone__c</tabs>
     <tabs>Developer__c</tabs>
+    <tabs>Transactions__c</tabs>
+    <tabs>Company_Budget__c</tabs>
+    <tabs>Project_s_Budget__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Business_UtilityBar</utilityBar>
 </CustomApplication>

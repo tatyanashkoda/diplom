@@ -57,9 +57,9 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
-        <fullName>Budget__c</fullName>
+        <fullName>Cost__c</fullName>
         <externalId>false</externalId>
-        <label>Budget</label>
+        <label>Cost</label>
         <precision>18</precision>
         <required>true</required>
         <scale>2</scale>
@@ -89,9 +89,48 @@
         <fullName>Due_date__c</fullName>
         <externalId>false</externalId>
         <label>Due date</label>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fees_Percent_For_Upwork__c</fullName>
+        <externalId>false</externalId>
+        <label>Fees Percent</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>20</fullName>
+                    <default>true</default>
+                    <label>20</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Fees_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Fees Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Finished__c</fullName>
@@ -102,9 +141,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Finished_by__c</fullName>
+        <externalId>false</externalId>
+        <label>Finished by</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
         <fullName>Money_without_charges__c</fullName>
         <externalId>false</externalId>
-        <formula>IF( RecordType.Name = &quot;Upwork&quot;, IF( ISPICKVAL( Sales_Percent_For_Upwork__c , &quot;20&quot;) , ( Budget__c -(Budget__c * 20) / 100), IF(ISPICKVAL( Sales_Percent_For_Upwork__c , &quot;10&quot;), (Budget__c -(Budget__c * 10) / 100), IF(ISPICKVAL( Sales_Percent_For_Upwork__c , &quot;5&quot;), (Budget__c -(Budget__c * 5) / 100), 1) ) ), Budget__c -(Budget__c  *  Sales_Percent__c ))</formula>
+        <formula>IF( RecordType.Name = &quot;Upwork&quot;, IF( ISPICKVAL( Fees_Percent_For_Upwork__c , &quot;20&quot;) , ( Cost__c -(Cost__c * 20) / 100), IF(ISPICKVAL( Fees_Percent_For_Upwork__c , &quot;10&quot;), (Cost__c -(Cost__c * 10) / 100), IF(ISPICKVAL( Fees_Percent_For_Upwork__c , &quot;5&quot;), (Cost__c -(Cost__c * 5) / 100), 1) ) ), Cost__c -(Cost__c  *  Fees_Percent__c ))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Money without charges</label>
         <precision>18</precision>
@@ -148,45 +195,6 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
-    </fields>
-    <fields>
-        <fullName>Sales_Percent_For_Upwork__c</fullName>
-        <externalId>false</externalId>
-        <label>Sales Percent</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>20</fullName>
-                    <default>true</default>
-                    <label>20</label>
-                </value>
-                <value>
-                    <fullName>10</fullName>
-                    <default>false</default>
-                    <label>10</label>
-                </value>
-                <value>
-                    <fullName>5</fullName>
-                    <default>false</default>
-                    <label>5</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Sales_Percent__c</fullName>
-        <externalId>false</externalId>
-        <label>Sales Percent</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackTrending>false</trackTrending>
-        <type>Percent</type>
     </fields>
     <fields>
         <fullName>Start_date__c</fullName>
@@ -233,6 +241,8 @@
     <label>Milestone</label>
     <listViews>
         <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -246,7 +256,7 @@
         <active>true</active>
         <label>Other</label>
         <picklistValues>
-            <picklist>Sales_Percent_For_Upwork__c</picklist>
+            <picklist>Fees_Percent_For_Upwork__c</picklist>
             <values>
                 <fullName>10</fullName>
                 <default>false</default>
@@ -285,7 +295,7 @@
         <active>true</active>
         <label>Upwork</label>
         <picklistValues>
-            <picklist>Sales_Percent_For_Upwork__c</picklist>
+            <picklist>Fees_Percent_For_Upwork__c</picklist>
             <values>
                 <fullName>10</fullName>
                 <default>false</default>
@@ -322,10 +332,30 @@
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
+        <fullName>Check_Cost_on_negative_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>Cost__c &lt;0</errorConditionFormula>
+        <errorDisplayField>Cost__c</errorDisplayField>
+        <errorMessage>Field value cannot be negative</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Dates</fullName>
+        <active>true</active>
+        <errorConditionFormula>Start_date__c &lt;=  Due_date__c</errorConditionFormula>
+        <errorMessage>Start date could not be more Due date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Developing_cost_on_negative_value</fullName>
+        <active>true</active>
+        <errorConditionFormula>Developing_cost__c &lt;0</errorConditionFormula>
+        <errorDisplayField>Developing_cost__c</errorDisplayField>
+        <errorMessage>Field value cannot be negative</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>check_for_Sales_Percent</fullName>
         <active>true</active>
-        <errorConditionFormula>Sales_Percent__c   &gt;=  100</errorConditionFormula>
-        <errorDisplayField>Sales_Percent__c</errorDisplayField>
+        <errorConditionFormula>OR(Fees_Percent__c &gt;=100,Fees_Percent__c &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Fees_Percent__c</errorDisplayField>
         <errorMessage>Incorrect Sales Percent</errorMessage>
     </validationRules>
     <visibility>Public</visibility>

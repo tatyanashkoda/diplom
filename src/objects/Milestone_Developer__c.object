@@ -49,7 +49,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
@@ -79,6 +79,11 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <label>Milestone Developer</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Milestone Name</label>
         <type>Text</type>
@@ -86,12 +91,5 @@
     <pluralLabel>Milestones Developers</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
-    <validationRules>
-        <fullName>Unique_Name</fullName>
-        <active>true</active>
-        <errorConditionFormula>!ISCLONE()</errorConditionFormula>
-        <errorDisplayField>Developer__c</errorDisplayField>
-        <errorMessage>This developer has already been added.</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

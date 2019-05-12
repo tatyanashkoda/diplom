@@ -108,6 +108,16 @@
         <visibleLines>25</visibleLines>
     </fields>
     <fields>
+        <fullName>Salary__c</fullName>
+        <externalId>false</externalId>
+        <label>Salary</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Skype__c</fullName>
         <externalId>false</externalId>
         <label>Skype</label>

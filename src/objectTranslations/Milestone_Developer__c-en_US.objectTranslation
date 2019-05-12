@@ -19,8 +19,4 @@
         <relationshipLabel><!-- Milestones Developers --></relationshipLabel>
     </fields>
     <startsWith>Consonant</startsWith>
-    <validationRules>
-        <errorMessage><!-- This developer has already been added. --></errorMessage>
-        <name>Unique_Name</name>
-    </validationRules>
 </CustomObjectTranslation>

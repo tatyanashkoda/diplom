@@ -29,6 +29,10 @@
         <name>Finished__c</name>
     </fields>
     <fields>
+        <label><!-- Finished by --></label>
+        <name>Finished_by__c</name>
+    </fields>
+    <fields>
         <label><!-- Money without charges --></label>
         <name>Money_without_charges__c</name>
     </fields>

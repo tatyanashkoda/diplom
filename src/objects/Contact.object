@@ -240,11 +240,6 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <listViews>
-        <fullName>AllContacts</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Contacts</label>
-    </listViews>
-    <listViews>
         <fullName>BirthdaysThisMonth</fullName>
         <filterScope>Everything</filterScope>
         <filters>

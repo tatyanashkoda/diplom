@@ -15,7 +15,7 @@
             <name>Update_Due_date_Milestone</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <formula>Finished__c</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
