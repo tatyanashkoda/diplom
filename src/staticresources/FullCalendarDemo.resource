@@ -5,7 +5,6 @@ const CalendarSingleton = (function () {
         //Initialize Full Calender
         //and render inside 'calendar' div
         const calendar = $('#calendar').fullCalendar({
-
             minTime: "07:00:00",
             maxTime: "21:00:00",
             firstDay: 1,

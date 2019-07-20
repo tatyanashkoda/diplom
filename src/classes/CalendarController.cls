@@ -25,11 +25,11 @@ global with sharing class CalendarController {
                 getEvent.Subject = objEvent.Subject;
             }
             if (objEvent.StartDateTime != null) {
-                getEvent.StartDateTime = objEvent.StartDateTime.getTime() + timeZone.getOffset(objEvent.StartDateTime);
+                getEvent.StartDateTime = objEvent.StartDateTime.getTime() + timeZone.getOffset(objEvent.StartDateTime.addHours(3));
             }
 
             if (objEvent.EndDateTime != null) {
-                getEvent.EndDateTime = objEvent.EndDateTime.getTime() + timeZone.getOffset(objEvent.EndDateTime);
+                getEvent.EndDateTime = objEvent.EndDateTime.getTime() + timeZone.getOffset(objEvent.EndDateTime.addHours(3));
             }
             getEvents.add(getEvent);
         }
@@ -37,14 +37,8 @@ global with sharing class CalendarController {
     }
 
     public static Contact createOrGetContact(String contactFirstName, String contactLastName, String contactEmail) {
-        System.debug('objEvent--fdddddddddddddddddddddd>');
         List<User> guestUser = [SELECT Id FROM User Where Username =: Constants.GUEST_USER_NAME];
         List<Contact> contacts = [SELECT Id,FirstName,LastName FROM Contact WHERE Email = :contactEmail AND LastName = :contactLastName];
-        System.debug('contactFirstName-->' + contactFirstName);
-        System.debug('contactLastName-->' + contactLastName);
-        System.debug('contactEmail-->' + contactEmail);
-        System.debug('guestUser-->' + guestUser);
-        System.debug('contacts-->' + contacts);
         if (contacts.isEmpty()) {
             Contact newContact = new Contact(
                     FirstName = contactFirstName,
@@ -52,11 +46,9 @@ global with sharing class CalendarController {
                     Email = contactEmail,
                     OwnerId = '0056F00000C7241QAB'
             );
-            System.debug('Contact1-->'+newContact);
             insert newContact;
             return newContact;
         } else {
-            System.debug('Contact2-->'+contacts.get(0));
             return contacts.get(0);
         }
     }

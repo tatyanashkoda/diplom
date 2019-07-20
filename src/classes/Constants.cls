@@ -10,9 +10,13 @@ public with sharing class Constants {
     public static final String GUEST_USER_NAME = 'Calendar Site Guest User';
     public static final String CONTACT_MANAGER_ID = '0036F000034bameQAA';
     public static final String ACCOUNT_MANAGER_ID = '0016F00003DhHmtQAF';
-    public static final String MILESTONE_STATUS_CLOSED = 'Closed';
-    public static final String MILESTONE_STATUS_INPROGRESS = 'In progress';
-    public static final String TRANSACTION_RECORD_TYPE_CUSTOMER_PAYMENT = 'Customer Payment';
-    public static final String TRANSACTION_RECORD_TYPE_SALARY = 'Salary';
+    public static final String STATUS_CLOSED = 'Closed';
+    public static final String STATUS_INPROGRESS = 'In progress';
+    public static final String TRANSACTION_RECORD_TYPE_CUSTOMER_PAYMENT = 'Incoming Payment';
+    public static final String TRANSACTION_RECORD_TYPE_SALARY = 'Developer payment';
+    public static final String TRANSACTION_RECORD_TYPE_OTHER_EXPENSE = 'Other Expense';
+    public static final String COMPANY_NAME = 'Bit Adventure';
+    public static final String TRANSACTION_RECORD_TYPE_MONEY_FLOW = 'Money Flow';
+
 
 }
