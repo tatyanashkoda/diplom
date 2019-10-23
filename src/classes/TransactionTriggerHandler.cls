@@ -6,6 +6,10 @@ public with sharing class TransactionTriggerHandler extends TriggerHandler {
             Where Name = :Constants.COMPANY_NAME
     ];
 
+//    Id customerRecordType = GetRecordType.getRecordType(Constants.TRANSACTION_RECORD_TYPE_CUSTOMER_PAYMENT);
+//    Id salaryRecordType = GetRecordType.getRecordType(Constants.TRANSACTION_RECORD_TYPE_SALARY);
+//    Id otherExpenseRecordType = GetRecordType.getRecordType(Constants.TRANSACTION_RECORD_TYPE_OTHER_EXPENSE);
+//    Id moneyFlowRecordType = GetRecordType.getRecordType(Constants.TRANSACTION_RECORD_TYPE_MONEY_FLOW);
     Id customerRecordType = Schema.SObjectType.Transactions__c.getRecordTypeInfosByName().get(Constants.TRANSACTION_RECORD_TYPE_CUSTOMER_PAYMENT).getRecordTypeId();
     Id salaryRecordType = Schema.SObjectType.Transactions__c.getRecordTypeInfosByName().get(Constants.TRANSACTION_RECORD_TYPE_SALARY).getRecordTypeId();
     Id otherExpenseRecordType = Schema.SObjectType.Transactions__c.getRecordTypeInfosByName().get(Constants.TRANSACTION_RECORD_TYPE_OTHER_EXPENSE).getRecordTypeId();

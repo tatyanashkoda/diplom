@@ -62,11 +62,6 @@ global with sharing class CalendarController {
     @RemoteAction
     global static List<GetEvent> createOrUpdateEvents(String calendarEvent) {
         Custom_Event__c eventObject = ((Custom_Event__c) JSON.deserialize(calendarEvent, Custom_Event__c.class));
-        System.debug('eventObject-->'+eventObject);
-//        Boolean isOldRecord = eventObject.Id != null;
-//        upsert eventObject;
-//        if (!isOldRecord) {
-//            User_Calendar__c userCalendar = new User_Calendar__c(Event__c = eventObject.Id, User__c = UserInfo.getUserId());
         Boolean checkOnFreeTime = false;
 
         List<Free_Time__c>freeTimes = [
@@ -88,12 +83,9 @@ global with sharing class CalendarController {
                     Subject__c = eventObject.Subject__c,
                     Status__c = Constants.WAITING_FOR_APPROVAL_STATUS,
                     Contact_Email__c = eventObject.Contact_Email__c,
-//                    Contact__c = createOrGetContact(eventObject.Contact_First_Name__c, eventObject.Contact_Last_Name__c, eventObject.Contact_Email__c).Id,
                     Attached_to__c = Constants.CONTACT_MANAGER_ID
             );
-            System.debug('objEvent1245-->' + objEvent);
             objEvent.Contact__c = createOrGetContact(eventObject.Contact_First_Name__c, eventObject.Contact_Last_Name__c, eventObject.Contact_Email__c).Id;
-            System.debug('objEvent-->' + objEvent);
             insert objEvent;
             ApexPages.Message msg = new ApexPages.Message(ApexPages.Severity.CONFIRM, 'Success! Event sent for review.');
             ApexPages.addMessage(msg);

@@ -17,6 +17,8 @@ public with sharing class Constants {
     public static final String TRANSACTION_RECORD_TYPE_OTHER_EXPENSE = 'Other Expense';
     public static final String COMPANY_NAME = 'Bit Adventure';
     public static final String TRANSACTION_RECORD_TYPE_MONEY_FLOW = 'Money Flow';
+    public static final String FIXED_COST = 'Early developing cost';
+    public static final String EARLY_COST = 'Fixed developing cost';
 
 
 }

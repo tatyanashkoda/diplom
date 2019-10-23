@@ -8,12 +8,9 @@ public without sharing class CreateEventController {
     }
 
     public Contact createOrGetContact() {
-        System.debug('sdfs21414');
-
         User guestUser = [SELECT Id FROM User Where Username = :Constants.GUEST_USER_NAME];
         List<Contact> contacts = [SELECT Id,FirstName,LastName FROM Contact WHERE Email = :objContact.Email AND LastName = :objContact.LastName];
         if (contacts.isEmpty()) {
-            System.debug('1sdfs21414');
             Contact newContact = new Contact(
                     FirstName = objContact.FirstName,
                     LastName = objContact.LastName,
@@ -81,7 +78,5 @@ public without sharing class CreateEventController {
             ApexPages.addMessage(msg);
             return null;
         }
-
-
     }
 }
