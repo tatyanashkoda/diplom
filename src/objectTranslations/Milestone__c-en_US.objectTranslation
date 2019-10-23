@@ -9,8 +9,8 @@
         <value>Milestones</value>
     </caseValues>
     <fields>
-        <label><!-- Budget --></label>
-        <name>Budget__c</name>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
     </fields>
     <fields>
         <label><!-- Description --></label>
@@ -25,33 +25,8 @@
         <name>Due_date__c</name>
     </fields>
     <fields>
-        <label><!-- Finished --></label>
-        <name>Finished__c</name>
-    </fields>
-    <fields>
-        <label><!-- Finished by --></label>
-        <name>Finished_by__c</name>
-    </fields>
-    <fields>
-        <label><!-- Money without charges --></label>
-        <name>Money_without_charges__c</name>
-    </fields>
-    <fields>
-        <label><!-- Organisation --></label>
-        <name>Organisation__c</name>
-    </fields>
-    <fields>
-        <label><!-- Profit --></label>
-        <name>Profit__c</name>
-    </fields>
-    <fields>
-        <label><!-- Project --></label>
-        <name>Project__c</name>
-        <relationshipLabel><!-- Milestones --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- Sales Percent --></label>
-        <name>Sales_Percent_For_Upwork__c</name>
+        <label><!-- Fees Percent --></label>
+        <name>Fees_Percent_For_Upwork__c</name>
         <picklistValues>
             <masterLabel>10</masterLabel>
             <translation><!-- 10 --></translation>
@@ -66,8 +41,41 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Sales Percent --></label>
-        <name>Sales_Percent__c</name>
+        <label><!-- Fees Percent --></label>
+        <name>Fees_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finished --></label>
+        <name>Finished__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finished by --></label>
+        <name>Finished_by__c</name>
+    </fields>
+    <fields>
+        <label><!-- Money without charges Currency --></label>
+        <name>Money_without_charges_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Money without charges --></label>
+        <name>Money_without_charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organisation --></label>
+        <name>Organisation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profit Currency --></label>
+        <name>Profit_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profit --></label>
+        <name>Profit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Milestones --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Start date --></label>
@@ -96,15 +104,31 @@
     <layouts>
         <layout>Milestone Layout</layout>
         <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
         </sections>
     </layouts>
     <layouts>
         <layout>Milestone Page Layouts for Upwork</layout>
         <sections>
+            <label><!-- Budget --></label>
+            <section>Budget</section>
+        </sections>
+        <sections>
             <label><!-- Custom Links --></label>
             <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dates --></label>
+            <section>Dates</section>
         </sections>
     </layouts>
     <recordTypes>
@@ -116,6 +140,18 @@
         <name>Upwork</name>
     </recordTypes>
     <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Field value cannot be negative --></errorMessage>
+        <name>Check_Cost_on_negative_value</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Start date could not be more Due date --></errorMessage>
+        <name>Check_Dates</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Field value cannot be negative --></errorMessage>
+        <name>Check_Developing_cost_on_negative_value</name>
+    </validationRules>
     <validationRules>
         <errorMessage><!-- Incorrect Sales Percent --></errorMessage>
         <name>check_for_Sales_Percent</name>
