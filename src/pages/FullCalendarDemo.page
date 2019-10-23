@@ -1,4 +1,5 @@
-<apex:page showHeader="false" sidebar="false"  applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" controller="CalendarController">
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false"
+           controller="CalendarController">
     <apex:stylesheet value="{!$Resource.fcalendarmincss}"/>
     <apex:stylesheet value="{!$Resource.jqueryMinCss}"/>
     <apex:includeScript value="{!URLFOR($Resource.fullcalendar,'/fullcalendar/jquery.min.js')}"/>
@@ -9,7 +10,7 @@
 
     <html>
     <head>
-        <apex:slds />
+        <apex:slds/>
         <style>
             .vf-header {
                 padding-left: 20px;
@@ -17,15 +18,17 @@
                 padding-top: 5px;
                 padding-bottom: 5px;
                 font-weight: bold;
-                font-family:segoe ui;
+                font-family: segoe ui;
             }
 
             .vf-input-element {
                 margin-left: 20px;
             }
+
             .error {
                 color: red;
             }
+
             .error input,
             .error textarea {
                 border: 1px solid red;
@@ -43,7 +46,8 @@
     </div>
     <div style="width:20%; padding:20px; float:right;font-family:segoe ui">
         <div class="vf-header" style="font-family:segoe ui; text-align: center">Information</div>
-        <p style="font-size: medium; font-family: font-family:segoe ui"> When creating a meeting, pay attention to the free time manager. It is displayed in green.
+        <p style="font-size: medium; font-family: font-family:segoe ui"> When creating a meeting, pay attention to the
+            free time manager. It is displayed in green.
         </p>
         <p style="font-size: medium; font-family: font-family:segoe ui">
             You can make a meeting for at least half an hour.
@@ -54,27 +58,33 @@
             <table>
                 <tr>
                     <td>First Name</td>
-                    <td><input name="firstName" required="true" type="text" id="createContactFirstName" style="margin:5px"/></td>
+                    <td><input name="firstName" required="true" type="text" id="createContactFirstName"
+                               style="margin:5px"/></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input name = "lastName" required="true" type="text" id="createContactLastName" style="margin:5px"/></td>
+                    <td><input name="lastName" required="true" type="text" id="createContactLastName"
+                               style="margin:5px"/></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input name = "email" required="true" type="email" id="createContactEmail" style="margin:5px"/></td>
+                    <td><input name="email" required="true" type="email" id="createContactEmail" style="margin:5px"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Start Time</td>
-                    <td><input name="startTime" required="true" type="datetime" id="createStartTime" style="margin:5px"/></td>
+                    <td><input name="startTime" required="true" type="datetime" id="createStartTime"
+                               style="margin:5px"/></td>
                 </tr>
                 <tr>
                     <td>End Time</td>
-                    <td><input name = "endTime" required="true" type="datetime" id="createEndTime" style="margin:5px"/></td>
+                    <td><input name="endTime" required="true" type="datetime" id="createEndTime" style="margin:5px"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Subject</td>
-                    <td><input name="subject" required="true" type="text" id="createEventSubject" style="margin:5px"/></td>
+                    <td><input name="subject" required="true" type="text" id="createEventSubject" style="margin:5px"/>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -95,6 +105,7 @@
             getFreeTimes(calendar);
             $("#createStartTime,#createEndTime,#updateStartTime,#updateEndTime").datepicker();
         });
+
         function getFreeTimes() {
             Visualforce.remoting.Manager.invokeAction(
                 '{!$RemoteAction.CalendarController.getFreeTimes}',
